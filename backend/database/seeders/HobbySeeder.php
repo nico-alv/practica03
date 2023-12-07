@@ -15,7 +15,7 @@ class HobbySeeder extends Seeder
     {
         DB::table('hobbies')->insert([
             'name' => "Modding",
-            'description' => "Modificar juegos para agregar contenido nuevo",
+            'description' => "Modificar juegos",
         ]);
         DB::table('hobbies')->insert([
             'name' => "Robotica",

@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('profile', [ProfileController::class, "showProfile"]);
-Route::resource('frameworks', FrameworkController::class);
-Route::resource('hobbies', HobbyController::class);
+Route::put('profile', [ProfileController::class, "editProfile"]);
+
 
 
 

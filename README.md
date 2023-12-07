@@ -1,6 +1,8 @@
 # Práctica 3 IDWM
 ![GitHub last commit](https://img.shields.io/github/last-commit/nico-alv/practica03/main)
 
+[![Image from Gyazo](https://i.gyazo.com/5c8b222462f8184c9b21214e4b0e79a1.png)](https://gyazo.com/5c8b222462f8184c9b21214e4b0e79a1)
+
 Solución para la tercera práctica de la asignatura de introducción al desarrollo web móvil en la cual se pide implementar una API y un frontend mobile editable.
 
 ----
@@ -56,12 +58,6 @@ composer install
 php artisan key:generate
 ```
 
-Generar la llave con la que se cifrarán los tokens.
-
-```bash
-php artisan jwt:secret
-```
-
 Ejecutar migraciones y seeders.
 
 ```bash
@@ -71,8 +67,9 @@ php artisan migrate:fresh --seed
 Arrancar el backend.
 
 ```bash
-php artisan serve
+php artisan serve --host=ip
 ```
+Reemplazar "ip" por la ipv4 local (ver con comando ipconfig)
 
 #### Mobile
 Luego, abrir otra terminal en la raiz del proyecto y ejecutar:
@@ -87,10 +84,18 @@ Instalar dependencias guardadas en package.json.
 npm install
 ```
 
+En Profile.js, cambiar 192.168.0.2 por la IP local en la que el servidor de laravel está escuchando.
+
+```
+const api_url = 'http://192.168.0.2:8000/api/profile';
+                        ^^^^^^^^^^^
+```
+
+
 Arrancar el proyecto mobile.
 
 ```bash
-npm run start
+npm run android
 ```
 
 ----
